@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(131, 80, 179);">
+  <a class="navbar-brand" routerLink="/lookups" style="font-weight: bolder; font-size: larger; color: white;">Project
+    Management</a>
+  <button class="navbar-toggler" style="color : white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" style="color : white"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/projects" style="color: white;">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/paidprojects" style="color: white;">Paid projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/lookups" style="color: white;">Lookups</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="!_authservice.isLoggedIn()">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/register" style="color: white;">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/login" style="color: white;">Login</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="_authservice.isLoggedIn()">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="onLogout()" style="color: white; cursor: pointer;">Logout</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

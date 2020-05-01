@@ -1,0 +1,16 @@
+{{project | json}}
+
+<div>
+    <form>
+        <div>
+            name : <input [(ngModel)]="review.name" type="text" name="name">
+        </div>
+        <div>
+            ratings : <input [(ngModel)]="review.ratings" type="text" name="name">
+        </div>
+        <div>
+            review : <input [(ngModel)]="review.review" type="text" name="name">
+        </div>
+        <button (click)="onSubmit()">Submit</button>
+    </form>
+</div>

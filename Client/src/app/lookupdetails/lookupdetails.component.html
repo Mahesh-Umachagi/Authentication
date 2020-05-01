@@ -1,0 +1,19 @@
+<div>
+    {{lookup | json}}
+</div>
+
+<div>
+    <form>
+        <div>
+            Name : <input [(ngModel)]="review.name" type="text" name="name">
+        </div>
+        <div>
+            Ratings : <input [(ngModel)]="review.ratings" type="text" name="ratings">
+        </div>
+        <div *ngFor="let r of lookup.reviews">
+            <!-- <app-reviewpanel [review]="r"></app-reviewpanel> -->
+            Review : <input [(ngModel)]="review.review" type="text" name="review">
+        </div>
+        <button (click)="onReviewSubmit()">Submit</button>
+    </form>
+</div>
